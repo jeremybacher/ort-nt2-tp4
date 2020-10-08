@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colour Game</title>
+		<link rel="stylesheet" type="text/css" href="without-vue/style.css">
+	</head>
+	<body>	
+		<div id="app">
+            <gameheader v-bind:colour='colour'></gameheader>
+            <buttonsheader v-bind:colour='colour' v-bind:colours='colours' v-bind:showmessage='showMessage'></buttonsheader>
+            <colourbox v-for="(colour, i) in colours"
+                v-bind:colour="colour"
+                v-bind:index="i"
+                v-bind:key="key(colour)" 
+                v-bind:colours='colours'
+                v-bind:winner="winner">
+            </colourbox>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="rgbgame.js"></script>
+	</body>
+</html>
